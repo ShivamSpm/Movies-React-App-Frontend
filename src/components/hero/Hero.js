@@ -13,7 +13,7 @@ const Hero = ({movies}) => {
     function reviews(movieId){
         navigate(`/Reviews/${movieId}`);
     }
-    
+    console.log(movies);
   return (
     <div className='movie-carousel-container'>
         <Carousel>
@@ -21,7 +21,7 @@ const Hero = ({movies}) => {
                 movies && movies.length > 0 ? (movies.map((movie) => {
                 
                     return(
-                        <Paper>
+                        <Paper key={movie.id}>
                             <div className='movie-card-container'>
                                 <div className='movie-card' style={{"--img": `url(${movie.backdrops[0]})`}}>
                                     <div className='movie-detail'>
